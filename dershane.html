@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dershane Detay</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (Opsiyonel) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Dershane Karşılaştırma</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tüm Dershaneler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="yks.html">YKS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lgs.html">LGS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giriş Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-success text-white ms-2" href="#">Kayıt Ol</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dershane Detayları -->
+    <div class="container my-5">
+        <div class="card">
+            <img id="dershane-logo" src="dsp (93).png" class="card-img-top" alt="Dershane Logo">
+            <div class="card-body">
+                <h3 id="dershane-isim" class="card-title"></h3>
+                <p id="dershane-slogan" class="card-text"></p>
+                <hr>
+                <p><strong>Konum:</strong> <span id="dershane-konum"></span></p>
+                <p><strong>8. Sınıf Ücreti:</strong> <span id="dershane-ucret8"></span></p>
+                <p><strong>7. Sınıf Ücreti:</strong> <span id="dershane-ucret7"></span></p>
+                <p><strong>Etüt Saatleri:</strong> <span id="dershane-etutSaatleri"></span></p>
+                <p><strong>Sınıf Mevcudu:</strong> <span id="dershane-sinifMevcudu"></span></p>
+                <p><strong>Aylık Toplam Ders Sayısı:</strong> <span id="dershane-aylikDersSayisi"></span></p>
+                <p><strong>Aylık Yapılan Deneme Sayısı:</strong> <span id="dershane-aylikDenemeSayisi"></span></p>
+                <p><strong>Kullanılan Ders Kaynakları:</strong> <span id="dershane-dersKaynaklari"></span></p>
+                <p><strong>Eğitmen Kadrosu:</strong> <span id="dershane-egitmenKadrosu"></span></p>
+                <p><strong>Ek Bilgiler:</strong> <span id="dershane-ekBilgiler"></span></p>
+                <hr>
+                <p><strong>Tanıtım Videosu:</strong> <a id="dershane-tanitimVideosu" href="#" target="_blank">İzle</a></p>
+                <p><strong>Başarı Tablosu:</strong> <a id="dershane-basariTablosu" href="#" target="_blank">Göster</a></p>
+                <!-- Sınav Türleri -->
+                <p><strong>Hazırlık Sınavları:</strong> <span id="dershane-hazirlik"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 Dershane Karşılaştırma. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- Bootstrap JS ve Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Data ve Script Dosyaları -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Dershane Detay Sayfası için JavaScript
+
+        // URL'deki 'id' parametresini al
+        const urlParams = new URLSearchParams(window.location.search);
+        const dershaneId = urlParams.get('id');
+
+        // Dershane verisini bul
+        const dershane = dershaneler.find(d => d.id === dershaneId);
+
+        if (dershane) {
+            // HTML elementlerini doldur
+            document.getElementById('dershane-logo').src = dershane.logo;
+            document.getElementById('dershane-logo').alt = dershane.isim;
+            document.getElementById('dershane-isim').textContent = dershane.isim;
+            document.getElementById('dershane-slogan').textContent = dershane.slogan;
+            document.getElementById('dershane-konum').textContent = dershane.konum;
+            document.getElementById('dershane-ucret8').textContent = dershane.ucret8 ? dershane.ucret8.toLocaleString() + ' TL' : 'Bilgi Yok';
+            document.getElementById('dershane-ucret7').textContent = dershane.ucret7 ? dershane.ucret7.toLocaleString() + ' TL' : 'Bilgi Yok';
+            document.getElementById('dershane-etutSaatleri').textContent = dershane.etutSaatleri;
+            document.getElementById('dershane-sinifMevcudu').textContent = dershane.sinifMevcudu;
+            document.getElementById('dershane-aylikDersSayisi').textContent = dershane.aylikDersSayisi || 'Bilgi Yok';
+            document.getElementById('dershane-aylikDenemeSayisi').textContent = dershane.aylikDenemeSayisi;
+            document.getElementById('dershane-dersKaynaklari').textContent = dershane.dersKaynaklari;
+            document.getElementById('dershane-egitmenKadrosu').textContent = dershane.egitmenKadrosu;
+            document.getElementById('dershane-ekBilgiler').textContent = dershane.ekBilgiler;
+            document.getElementById('dershane-tanitimVideosu').href = dershane.tanitimVideosu;
+            document.getElementById('dershane-basariTablosu').href = dershane.basariTablosu;
+            document.getElementById('dershane-hazirlik').textContent = dershane.hazirlik.join(', ');
+        } else {
+            // Dershane bulunamazsa mesaj göster
+            document.querySelector('.container.my-5').innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    İstediğiniz dershane bulunamadı.
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
