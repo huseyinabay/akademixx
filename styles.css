@@ -17,20 +17,54 @@ body {
 }
 
 /* Banner Özelleştirmesi */
+/* Banner Özelleştirmesi */
 .p-5 {
     background-image: url('dersane1.jpeg'); /* Banner için arka plan resmi */
     background-size: cover;
     background-position: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    padding: 3rem; /* Adjust padding for more space */
 }
 
+/* Text size adjustments */
 .p-5 h1 {
     font-size: 3rem;
 }
 
 .p-5 p {
     font-size: 1.25rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    /* Smaller screen adjustments */
+    .p-5 {
+        padding: 2rem; /* Decrease padding on smaller screens */
+    }
+
+    .p-5 h1 {
+        font-size: 2rem; /* Reduce font size for mobile */
+    }
+
+    .p-5 p {
+        font-size: 1rem; /* Adjust paragraph text size */
+    }
+}
+
+@media (max-width: 576px) {
+    /* For very small screens */
+    .p-5 {
+        padding: 1.5rem; /* Further reduce padding */
+    }
+
+    .p-5 h1 {
+        font-size: 1.5rem; /* Smaller font size for smaller screens */
+    }
+
+    .p-5 p {
+        font-size: 0.9rem; /* Smaller paragraph text */
+    }
 }
 
 /* Dershane Kartları */
