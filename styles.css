@@ -44,11 +44,11 @@ body {
     }
 
     .p-5 h1 {
-        font-size: 2rem; /* Reduce font size for mobile */
+        font-size: 1rem; /* Reduce font size for mobile */
     }
 
     .p-5 p {
-        font-size: 1rem; /* Adjust paragraph text size */
+        font-size: 0.7rem; /* Adjust paragraph text size */
     }
 }
 
@@ -59,11 +59,11 @@ body {
     }
 
     .p-5 h1 {
-        font-size: 1.0rem; /* Smaller font size for smaller screens */
+        font-size: 0.7rem; /* Smaller font size for smaller screens */
     }
 
     .p-5 p {
-        font-size: 0.9rem; /* Smaller paragraph text */
+        font-size: 0.6rem; /* Smaller paragraph text */
     }
 }
 
