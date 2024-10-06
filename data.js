@@ -17,8 +17,10 @@ const dershanelerlgs = [
         ekBilgiler: "Öğrenciyle bire bir özel ders + koçluk sistemi + öğrenci performansını sıkı takip + yapay zeka destekli soru havuzu + kafes yöntemiyle eğitim.",
         logo: "icon.jpeg",
         detaySayfa: "dershane.html?id=kuzey-kurs-vip",
-        hazirlik: ["LGS"] // LGS ve YKS hazırlık
-    },
+        hazirlik: ["LGS"],
+        kazanımDegerlendirmeSinavi: "<a href='kuzeykazanim.pdf' target='_blank'>Kazanım Değerlendirme Sınavı PDF</a>"
+    }
+    ,
     {
         id: "radikal-egitim-kurumlari",
         isim: "Radikal Eğitim Kurumları",
@@ -167,8 +169,10 @@ const dershaneler = [
         ekBilgiler: "Öğrenciyle bire bir özel ders + koçluk sistemi + öğrenci performansını sıkı takip + yapay zeka destekli soru havuzu + kafes yöntemiyle eğitim.",
         logo: "icon.jpeg",
         detaySayfa: "dershane.html?id=kuzey-kurs-vip",
-        hazirlik: ["LGS"] // LGS ve YKS hazırlık
-    },
+        hazirlik: ["LGS"],
+        kazanımDegerlendirmeSinavi: "<a href='kuzeykazanim.pdf' target='_blank'>Kazanım Değerlendirme Sınavı PDF</a>"
+    }
+    ,
     {
         id: "radikal-egitim-kurumlari",
         isim: "Radikal Eğitim Kurumları",
