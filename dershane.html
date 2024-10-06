@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akademix</title>
+    <title>Dershane Detay</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome (Opsiyonel) -->
@@ -16,7 +16,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Akademix</a>
+            <a class="navbar-brand" href="index.html">Dershane Karşılaştırma</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -92,32 +92,36 @@
         const dershane = dershaneler.find(d => d.id === dershaneId);
 
         if (dershane) {
-            // HTML elementlerini doldur
-            document.getElementById('dershane-logo').src = dershane.logo;
-            document.getElementById('dershane-logo').alt = dershane.isim;
-            document.getElementById('dershane-isim').textContent = dershane.isim;
-            document.getElementById('dershane-slogan').textContent = dershane.slogan;
-            document.getElementById('dershane-konum').textContent = dershane.konum;
-            document.getElementById('dershane-ucret8').textContent = dershane.ucret8 ? dershane.ucret8.toLocaleString() + ' TL' : 'Bilgi Yok';
-            document.getElementById('dershane-ucret7').textContent = dershane.ucret7 ? dershane.ucret7.toLocaleString() + ' TL' : 'Bilgi Yok';
-            document.getElementById('dershane-etutSaatleri').textContent = dershane.etutSaatleri;
-            document.getElementById('dershane-sinifMevcudu').textContent = dershane.sinifMevcudu;
-            document.getElementById('dershane-aylikDersSayisi').textContent = dershane.aylikDersSayisi || 'Bilgi Yok';
-            document.getElementById('dershane-aylikDenemeSayisi').textContent = dershane.aylikDenemeSayisi;
-            document.getElementById('dershane-dersKaynaklari').textContent = dershane.dersKaynaklari;
-            document.getElementById('dershane-egitmenKadrosu').textContent = dershane.egitmenKadrosu;
-            document.getElementById('dershane-ekBilgiler').textContent = dershane.ekBilgiler;
-            document.getElementById('dershane-tanitimVideosu').href = dershane.tanitimVideosu;
-            document.getElementById('dershane-basariTablosu').href = dershane.basariTablosu;
-            document.getElementById('dershane-hazirlik').textContent = dershane.hazirlik.join(', ');
-        } else {
-            // Dershane bulunamazsa mesaj göster
-            document.querySelector('.container.my-5').innerHTML = `
-                <div class="alert alert-danger" role="alert">
-                    İstediğiniz dershane bulunamadı.
-                </div>
-            `;
-        }
+    document.getElementById('dershane-logo').src = dershane.logo;
+    document.getElementById('dershane-logo').alt = dershane.isim;
+    document.getElementById('dershane-isim').textContent = dershane.isim;
+    document.getElementById('dershane-slogan').textContent = dershane.slogan;
+    document.getElementById('dershane-konum').textContent = dershane.konum;
+    document.getElementById('dershane-ucret8').textContent = dershane.ucret8 ? dershane.ucret8.toLocaleString() + ' TL' : 'Bilgi Yok';
+    document.getElementById('dershane-ucret7').textContent = dershane.ucret7 ? dershane.ucret7.toLocaleString() + ' TL' : 'Bilgi Yok';
+    document.getElementById('dershane-etutSaatleri').textContent = dershane.etutSaatleri;
+    document.getElementById('dershane-sinifMevcudu').textContent = dershane.sinifMevcudu;
+    document.getElementById('dershane-aylikDersSayisi').textContent = dershane.aylikDersSayisi || 'Bilgi Yok';
+    document.getElementById('dershane-aylikDenemeSayisi').textContent = dershane.aylikDenemeSayisi;
+    document.getElementById('dershane-dersKaynaklari').textContent = dershane.dersKaynaklari;
+    document.getElementById('dershane-egitmenKadrosu').textContent = dershane.egitmenKadrosu;
+    document.getElementById('dershane-ekBilgiler').textContent = dershane.ekBilgiler;
+    document.getElementById('dershane-tanitimVideosu').href = dershane.tanitimVideosu;
+    document.getElementById('dershane-basariTablosu').href = dershane.basariTablosu;
+    document.getElementById('dershane-hazirlik').textContent = dershane.hazirlik.join(', ');
+
+    // ADD THE NEW BLOCK HERE:
+    if (dershane.kazanımDegerlendirmeSinavi) {
+        document.querySelector('.card-body').innerHTML += `<p><strong>Kazanım Değerlendirme Sınavı:</strong> ${dershane.kazanımDegerlendirmeSinavi}</p>`;
+    }
+} else {
+    document.querySelector('.container.my-5').innerHTML = `
+        <div class="alert alert-danger" role="alert">
+            İstediğiniz dershane bulunamadı.
+        </div>
+    `;
+}
+
     </script>
 </body>
 </html>
